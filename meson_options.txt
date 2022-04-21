@@ -1,0 +1,4 @@
+option('rpath', type: 'feature', value: 'auto', description: 'whether to include rpath information in installed binaries and libraries')
+option('tran-pipe', type: 'boolean', value: false, description: 'enable pipe transport for testing')
+option('debug-logs', type: 'boolean', value: false, description: 'enable extra debugging code')
+option('valgrind', type: 'boolean', value: false, description: 'run test suite under valgrind')
