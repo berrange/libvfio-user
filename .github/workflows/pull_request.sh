@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -e
+set -v
 
 test -z "$BUILD" && BUILD=build
 
@@ -28,7 +29,7 @@ ninja -C $BUILD/gcc-debug
 meson test -C $BUILD/gcc-debug --no-suite style
 
 # plain build with gcc
-CC=gcc meson build/gcc-plain -Dtran-pipe=true -Dvalgrind=true
+CC=gcc meson build/gcc-plain -Dtran-pipe=true
 ninja -C $BUILD/gcc-plain
 meson test -C $BUILD/gcc-plain --no-suite style
 DESTDIR=tmp.install meson install -C $BUILD/gcc-plain
