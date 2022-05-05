@@ -7,7 +7,7 @@ test -z "$BUILD" && BUILD=build
 rm -rf $BUILD
 
 # ASAN build with clang
-CC=clang meson $BUILD/asan -Db_sanitize=address -Db_lundef=true
+CC=clang meson $BUILD/asan -Db_sanitize=address -Db_lundef=false
 meson compile -C $BUILD/asan
 meson test -C $BUILD/asan --suite style
 meson test -C $BUILD/asan --no-suite style
