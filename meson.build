@@ -34,6 +34,7 @@ else
 endif
 
 thread_dep = dependency('threads')
+dl_dep = dependency('dl')
 
 json_c_version = '0.11'
 json_c_dep = dependency('json-c', version: '>=' + json_c_version)

@@ -23,7 +23,11 @@ unit_tests_sources = [
   '../lib/tran_sock.c',
 ]
 
-unit_tests_deps = [json_c_dep, cmocka_dep]
+unit_tests_deps = [
+  json_c_dep,
+  cmocka_dep,
+  dl_dep,
+]
 unit_tests_cflags = [
   '-DUNIT_TEST',
   '-DWITH_TRAN_PIPE',
