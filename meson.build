@@ -33,6 +33,7 @@ else
   rpathdir = libdir
 endif
 
+thread_dep = dependency('threads')
 
 json_c_version = '0.11'
 json_c_dep = dependency('json-c', version: '>=' + json_c_version)

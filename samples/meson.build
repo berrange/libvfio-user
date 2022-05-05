@@ -6,7 +6,11 @@ client_sources = [
   '../lib/tran_sock.c',
 ]
 
-client_deps = [json_c_dep, openssl_dep]
+client_deps = [
+  json_c_dep,
+  openssl_dep,
+  thread_dep,
+]
 
 client = executable(
   'client',
@@ -22,7 +26,10 @@ server_sources = [
   'server.c',
 ]
 
-server_deps = [libvfio_user_dep, openssl_dep]
+server_deps = [
+  libvfio_user_dep,
+  openssl_dep,
+]
 
 server = executable(
   'server',
@@ -39,7 +46,8 @@ null_sources = [
 ]
 
 null_deps = [
-  libvfio_user_dep
+  libvfio_user_dep,
+  thread_dep,
 ]
 
 null = executable(
@@ -57,7 +65,7 @@ gpio_pci_idio_16_sources = [
 ]
 
 gpio_pci_idio_16_deps = [
-  libvfio_user_dep
+  libvfio_user_dep,
 ]
 
 gpio_pci_idio_16 = executable(
@@ -75,7 +83,7 @@ lspci_sources = [
 ]
 
 lspci_deps = [
-  libvfio_user_dep
+  libvfio_user_dep,
 ]
 
 lspci = executable(
