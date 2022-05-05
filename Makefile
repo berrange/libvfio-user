@@ -29,6 +29,7 @@
 #
 
 BUILD_TYPE ?= dbg
+VALGRIND ?= 1
 
 ifeq ($(BUILD_TYPE), dbg)
 	CMAKE_BUILD_TYPE = Debug

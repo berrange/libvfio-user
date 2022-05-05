@@ -11,7 +11,7 @@ test -n "$2" && SERVER="$2"
 #
 # ASAN and valgrind, understandably, don't get along.
 #
-if [ "$WITH_ASAN" = 1 ]; then
+if test "$WITH_ASAN" = 1 || test -z "$VALGRIND" ; then
     valgrind=""
 else
     valgrind="valgrind --quiet --trace-children=yes --error-exitcode=1 --leak-check=full --read-inline-info=yes --read-var-info=yes --track-origins=yes"
