@@ -86,7 +86,7 @@ if opt_valgrind and opt_sanitizers == 'none'
     suite: 'valgrind',
     is_parallel : false,
     env: environment({'VALGRIND': '1'}),
-    args: [find_program('test-client-server.sh').full_path(), client, server],
+    args: [find_program('test-client-server.sh').path(), client, server],
   )
 endif
 

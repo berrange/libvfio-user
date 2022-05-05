@@ -60,7 +60,7 @@ if pytest.found() and opt_sanitizers == 'none'
            timeout: 120,
            env: environment({'PYTHONMALLOC': 'malloc',
                              'LIBVFIO_SO_DIR': libvfio_so_dir}),
-           args: valgrind_python_args + [pytest.full_path(), files(testname)])
+           args: valgrind_python_args + [pytest.path(), files(testname)])
     endforeach
   endif
 
